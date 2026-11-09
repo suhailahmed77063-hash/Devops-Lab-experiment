@@ -1,0 +1,38 @@
+EXPERIMENT NO.: 8.
+AIM:
+To Integrate Kubernetes and Docker
+DESCRIPTION:
+Kubernetes and Docker are both popular technologies for managing
+containers, but they are used for different purposes. Kubernetes is an
+orchestration platform that provides a higher-level abstraction for managing
+containers, while Docker is a containerization technology that provides a
+lower-level runtime for containers.
+To integrate Kubernetes and Docker, you need to use Docker to build and
+package your application as a container image, and then use Kubernetes to
+manage and orchestrate the containers.
+Here's a high-level overview of the steps to integrate Kubernetes and
+Docker:
+• Build a Docker image:
+Use Docker to build a Docker image of your application. You can use a
+Dockerfile to specify the base image, copy the application into the container,
+and specify the command to run the application.
+• Push the Docker image to a registry:
+Push the Docker image to a container registry, such as Docker Hub or
+Google Container Registry, so that it can be easily accessed by Kubernetes.
+Deploy the Docker image to a Kubernetes cluster:
+Use Kubernetes to deploy the Docker image to a cluster. This involves
+Page | 16
+creating a deployment that specifies the number of replicas and the image to
+be used, and creating a service that exposes the deployment to the network.
+Monitor and manage the containers:
+Use Kubernetes to monitor and manage the containers. This includes scaling
+the number of replicas, updating the image, and rolling out updates to the
+containers.
+• Continuously integrate and deploy changes:
+Use a continuous integration and deployment (CI/CD) pipeline to
+automatically build, push, and deploy changes to the Docker image and the
+Kubernetes cluster. This makes it easier to make updates to the application
+and ensures that the latest version is always running in the cluster.
+By integrating Kubernetes and Docker, you can leverage the strengths of
+both technologies to manage containers in a scalable, reliable, and efficient
+manner.

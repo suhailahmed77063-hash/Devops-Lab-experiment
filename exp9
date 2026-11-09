@@ -1,0 +1,65 @@
+AIM:
+Automate the process of running containerized applicationdeveloped in
+exercise 7 using Kubernetes
+DESCRIPTION
+To automate the process of running the containerized application developed
+in exercise 7 using Kubernetes, you can follow these steps:
+• Create a Kubernetes cluster:
+Create a Kubernetes cluster using a cloud provider, such as Google Cloud or
+Amazon Web Services, or using a local installation of Minikube.
+• Push the Docker image to a registry:
+Push the Docker image of your application to a container registry, such as
+Docker Hub or Google Container Registry.
+• Create a deployment:
+Create a deployment in Kubernetes that specifies the number of replicas and
+the Docker image to use. Here's an example of a deployment YAML file:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: myapp
+spec:
+replicas: 3
+Page | 18
+selector:
+matchLabels:
+app: myapp
+template:
+metadata:
+labels:
+app: myapp
+spec:
+containers:
+- name: myapp
+image: myimage
+ports:
+- containerPort: 80
+• Create a service:
+Create a service in Kubernetes that exposes the deployment to the network.
+Here's an example of a service YAML file:
+apiVersion: v1
+kind: Service
+metadata:
+name: myapp-service
+spec:
+selector:
+app: myapp
+ports:
+- name: http
+port: 80
+targetPort: 80
+Page | 19
+type: ClusterIP
+• Apply the deployment and service to the cluster:
+Apply the deployment and service to the cluster using the kubectl commandline tool. For example:
+$ kubectl apply -f deployment.yaml
+$ kubectl apply -f service.yaml
+• Verify the deployment:
+Verify the deployment by checking the status of the pods and the service. For
+example:
+$ kubectl get pods
+$ kubectl get services
+This is a basic example of how to automate the process of running a
+containerized application using Kubernetes. In a real-world scenario, you
+would likely have more complex requirements, such as managing persistent
+data, scaling, and rolling updates, but this example should give you a good
+starting point for using Kubernetes to manage your containers.

@@ -1,0 +1,59 @@
+Write a simple program in JavaScript and perform testing usingSelenium
+PROGRAM:
+Simple JavaScript program that you can test using Selenium
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Simple JavaScript Program</title>
+</head>
+<body>
+ <p id="output">0</p>
+ <button id="increment-button">Increment</button>
+ <script>
+const output = document.getElementById("output");
+const incrementButton = document.getElementById("incrementbutton");
+let count = 0;
+incrementButton.addEventListener("click", function() {
+count += 1;
+output.innerHTML = count;
+});
+ </script>
+Page | 23
+</body>
+</html>
+Write a test case for this program using Selenium
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+public class Main {
+private WebDriver driver;
+@Before
+public void setUp() {
+System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+driver = new ChromeDriver();
+}
+@Test
+public void testIncrementButton() {
+driver.get("file:///path/to/program.html");
+driver.findElement(By.id("increment-button")).click();
+String result = driver.findElement(By.id("output")).getText();
+assert result.equals("1");
+}
+@After
+public void tearDown() {
+Page | 24
+driver.quit();
+}
+}
+You can run the test case using the following command:
+$ javac Main.java
+$ java Main
+The output of the test case should be:
+.
+Time: 0.189
+OK (1 test)
+This output indicates that the test case passed, and the increment button was
+successfully clicked, causing the output to be incremented by 1.

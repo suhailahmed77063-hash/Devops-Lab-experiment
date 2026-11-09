@@ -1,0 +1,41 @@
+AIM:
+Install and Explore Selenium for automated testing
+DESCRIPTION:
+To install and explore Selenium for automated testing, you can follow these
+steps:
+Install Java Development Kit (JDK):
+• Selenium is written in Java, so you'll need to install JDK in order to
+run it. You can download and install JDK from the official Oracle
+website.
+• Install the Selenium WebDriver:
+• You can download the latest version of the Selenium WebDriver from
+the Selenium website. You'll also need to download the appropriate
+driver for your web browser of choice (e.g. Chrome Driver for
+Google Chrome).
+Install an Integrated Development Environment (IDE):
+• To write and run Selenium tests, you'll need an IDE. Some popular
+choices include Eclipse, IntelliJ IDEA, and Visual Studio Code.
+• Write a simple test:
+• Once you have your IDE set up, you can write a simple test using the
+Selenium WebDriver. Here's an example in Java:
+Page | 21
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Main {
+public static void main(String[] args) {
+System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+WebDriver driver = new ChromeDriver();
+driver.get("https://www.google.com");
+System.out.println(driver.getTitle());
+driver.quit();
+}
+}
+• Run the test:
+Run the test using your IDE or from the command line using the following
+command:
+$ javac Main.java
+$ java Main
+This is a basic example of how to get started with Selenium for automated
+testing. In a real-world scenario, you would likely write more complex tests
+and organize your code into test suites and test cases, but this example
+should give you a good starting point for exploring Selenium.

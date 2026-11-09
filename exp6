@@ -1,0 +1,39 @@
+EXPERIMENT NO. : 6.
+AIM:
+Explore Docker commands for content management.
+DESCRIPTION
+Docker is a containerization technology that is widely used for managing
+application containers. Here are some commonly used Docker commands for
+content management:
+• Docker run: Run a command in a new container.
+For example: $ docker run --name mycontainer -it ubuntu:16.04 /bin/bash
+This command runs a new container based on the Ubuntu 16.04image
+and starts a shell session in the container.
+• Docker start: Start one or more stopped containers.
+For example: $ docker start mycontainer
+This command starts the container named "mycontainer".
+• Docker stop: Stop one or more running containers.
+For example: $ docker stop mycontainer
+This command stops the container named "mycontainer".
+• Docker rm: Remove one or more containers.
+Page | 12
+For example: $ docker rm mycontainer
+This command removes the container named "mycontainer".
+• Docker ps: List containers.
+For example: $ docker ps
+This command lists all running containers.
+• Docker images: List images.
+For example: $ docker images
+This command lists all images stored locally on the host.
+• Docker pull: Pull an image or a repository from a registry.
+For example: $ docker pull ubuntu:16.04
+This command pulls the Ubuntu 16.04 image from the Docker Hub registry.
+• Docker push: Push an image or a repository to a registry.
+For example: $ docker push myimage
+This command pushes the image named "myimage" to the Docker Hub
+registry.
+These are some of the basic Docker commands for managing containers and
+images. There are many other Docker commands and options that you can
+use for more advanced use cases, such as managing networks, volumes, and
+configuration. However, these commands should give you a good starting
+point for using Docker for content management.

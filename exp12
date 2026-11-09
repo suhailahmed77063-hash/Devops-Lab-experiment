@@ -1,0 +1,49 @@
+Develop test cases for the above containerized application usingselenium
+PROGRAM:
+Here is an example of how you could write test cases for the containerizedapplication
+using Selenium
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+public class Main {
+private WebDriver driver;
+@Before
+public void setUp() {
+System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+driver = new ChromeDriver();
+}
+@Test
+public void testHomePageLoads() {
+Page | 26
+driver.get("http://localhost:8080");
+String title = driver.getTitle();
+assert title.equals("My Containerized Application");
+}
+@Test
+public void testSubmitForm() {
+driver.get("http://localhost:8080");
+driver.findElement(By.name("name")).sendKeys("John Doe");
+driver.findElement(By.name("email")).sendKeys("john.doe@example.co
+m");
+driver.findElement(By.name("submit")).click();
+String result = driver.findElement(By.id("result")).getText();
+assert result.equals("Form submitted successfully!");
+}
+@After
+public void tearDown() {
+driver.quit();
+}
+}
+You can run the test cases using the following command:
+$ javac Main.java
+$ java Main
+The output of the test cases should be:
+..
+Time: 1.135
+OK (2 tests)
+This output indicates that both test cases passed, and the containerized
+Page | 27
+application is functioning as expected.

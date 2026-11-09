@@ -1,0 +1,38 @@
+EXPERIMENT NO: 4.
+AIM:
+Jenkins installation and setup, explore the environment
+DESCRIPTION
+Jenkins is a popular open-source tool for Continuous Integration and
+Continuous Deployment (CI/CD) in software development. Here are the
+steps to install and set up Jenkins:
+Download and install Jenkins:
+• Download the Jenkins package for your operating system from the
+Jenkins website.
+• Follow the installation instructions for your operating system to
+install Jenkins.
+Start the Jenkins service:
+• On Windows, use the Windows Services Manager to start the Jenkins
+service.
+• On Linux, use the following command to start the Jenkins service:
+$ sudo service jenkins start
+Access the Jenkins web interface:
+• Open a web browser and navigate to http://localhost:8080 to access
+the Jenkins web interface.
+• If the Jenkins service is running, you will see the Jenkins login page.
+Initialize the Jenkins environment:
+• Follow the instructions on the Jenkins setup wizard to initialize the
+Jenkins environment.
+Page | 8
+• This process involves installing recommended plugins, setting up
+security, and creating the first admin user.
+Explore the Jenkins environment:
+• Once the Jenkins environment is set up, you can explore the various
+features and functionalities available in the web interface.
+• Jenkins has a rich user interface that provides access to features such
+as build history, build statistics, and system information.
+These are the basic steps to install and set up Jenkins. Depending on your use
+case, you may need to customize your Jenkins environment further. For
+example, you may need to configure build agents, set up build pipelines, or
+integrate with other tools. However, these steps should give you a good
+starting point for using Jenkins for CI/CD in your software development
+projects.

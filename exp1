@@ -1,0 +1,55 @@
+EXPERIMENT NO: 1.
+AIM:
+Write code for a simple user registration form for an event.
+DESCRIPTION:
+Here's an example of a simple user registration form using Flask and Docker
+in DevOps:
+• Create a Docker file with the following content to create a Docker
+image for your Flask application:
+FROM python:3.8
+WORKDIR /app
+COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 5000
+CMD ["python", "app.py"]
+• Create a requirements.txt file with the following content to list the
+dependencies of your Flask application: Flask==1.1.2
+• Create a app.py file with the following code for a simple user
+registration form in Flask:
+from flask import Flask, request, render_template
+app = Flask( name )
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+if request.method == 'POST':
+name = request.form['name']
+email = request.form['email']
+password = request.form['password']
+# Store the user data in a database or file
+Page | 3
+return render_template('success.html')
+return render_template('register.html')
+if name == ' main ':
+app.run(host='0.0.0.0')
+• Create an templates folder and add the following two files:
+register.html and success.html.
+register.html
+<form method="post">
+<input type="text" name="name" placeholder="Name">
+<input type="email" name="email" placeholder="Email">
+<input type="password" name="password" placeholder="Password">
+<input type="submit" value="Submit">
+</form>
+success.html
+<h2>Registration Successful</h2>
+• Build the Docker image for your Flask application using the
+following command: docker build -t simple-flask-app .
+• Run a Docker container from the image using the following
+command: docker run -p 5000:5000 simple-flask-app
+• Open a web browser and access the registration form at
+http://localhost:5000/register.
+This example demonstrates how to build a simple user registration form in
+Flask and run it in a Docker container in DevOps. Note that this code is only
+meant to demonstrate the basic structure of a user registration form and does
+not include any security measures or proper error handling. It is highly
+recommended to add security measures such as password hashing and
+validation before using it in a production environment.

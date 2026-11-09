@@ -1,0 +1,24 @@
+EXPERIMENT NO: 2.
+AIM:
+Explore Git and GitHub commands
+DESCRIPTION:
+Git and GitHub are two of the most popular tools used for version control
+and collaboration in software development.
+Here are some common Git and GitHub commands:
+• Initializing a Git repository: $ git init
+• Checking the status of your repository: $ git status
+• Adding files to the stage: $ git add <file-name>
+• Committing changes: $ git commit -m "commit message"
+• Checking the commit history: $ git log
+• Undoing changes: $ git checkout <file-name>
+• Creating a new branch: $ git branch <branch-name>
+• Switching to a different branch: $ git checkout <branch-name>
+• Merging two branches: $ git merge <branch-name>
+• Pushing changes to a remote repository: $ git push origin <branchname>
+• Cloning a repository from GitHub: $ git clone <repository-url>
+• Creating a pull request on GitHub: Go to the repository on GitHub,
+select the branch you want to merge and click the "New pull request"
+button.
+These are just a few of the many Git and GitHub commands available. There
+are many other Git commands and functionalities that you can explore to suit
+your needs.

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Simple JavaScript Program</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      background: #f4f6fb;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      padding: 32px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+      text-align: center;
+      min-width: 240px;
+    }
+    h1 { font-size: 18px; margin: 0 0 18px; color: #344054; }
+    p#output {
+      font-size: 48px;
+      font-weight: 700;
+      color: #101828;
+      margin: 0 0 20px;
+    }
+    button {
+      padding: 10px 22px;
+      border: 0;
+      border-radius: 8px;
+      background: #7f56d9;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #6941c6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Simple JavaScript Counter</h1>
+    <p id="output">0</p>
+    <button id="increment-button">Increment</button>
+  </div>
+
+  <script>
+    const output = document.getElementById("output");
+    const incrementButton = document.getElementById("increment-button");
+    let count = 0;
+
+    incrementButton.addEventListener("click", function () {
+      count += 1;
+      output.innerHTML = count;
+    });
+  </script>
+</body>
+</html>

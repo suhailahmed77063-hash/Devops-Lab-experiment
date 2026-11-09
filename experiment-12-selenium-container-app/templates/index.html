@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Containerized Application</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      padding: 32px 36px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+      width: 360px;
+    }
+    h1 { font-size: 20px; margin: 0 0 4px; color: #101828; }
+    p.sub { margin: 0 0 18px; color: #667085; font-size: 14px; }
+    label { display: block; font-size: 13px; color: #344054; margin: 12px 0 6px; }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1px solid #d0d5dd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    input[type="submit"] {
+      margin-top: 18px;
+      width: 100%;
+      padding: 11px;
+      border: 0;
+      border-radius: 8px;
+      background: #0f766e;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover { background: #115e59; }
+    #result {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #039855;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>My Containerized Application</h1>
+    <p class="sub">Enter your details and submit the form.</p>
+
+    <form method="post" action="/">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email">
+
+      <input type="submit" name="submit" id="submit" value="Submit">
+    </form>
+
+    <div id="result">{{ message }}</div>
+  </div>
+</body>
+</html>

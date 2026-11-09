@@ -1,0 +1,73 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven-3.9'
+        jdk 'JDK-17'
+    }
+
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+    }
+
+    environment {
+        APP_NAME = 'hello-jenkins'
+        DEPLOY_DIR = "${env.WORKSPACE}/deploy"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "Building ${env.JOB_NAME} #${env.BUILD_NUMBER}"
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn -B test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh '''
+                    mkdir -p "${DEPLOY_DIR}"
+                    cp target/${APP_NAME}.jar "${DEPLOY_DIR}/"
+                    echo "Deployed ${APP_NAME}.jar to ${DEPLOY_DIR}"
+                    java -jar "${DEPLOY_DIR}/${APP_NAME}.jar"
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Build ${env.BUILD_NUMBER} succeeded."
+        }
+        failure {
+            echo "Build ${env.BUILD_NUMBER} failed. Check the console output."
+        }
+    }
+}
